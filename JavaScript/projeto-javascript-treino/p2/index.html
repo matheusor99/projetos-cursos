@@ -1,0 +1,25 @@
+<input placeholder="Nome" type="text" name="nome" id="nome"><br>
+<input placeholder="Idade" type="number" name="idade" id="idade"><br>
+<input placeholder="Data de Nasc" type="text" name="dataNasc" id="dataNasc"><br><br>
+
+<button id="botaoCadastro" onclick="cadastro.cadastrar()">Cadastrar</button><br><br>
+
+<table>
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>idade</td>
+            <td>Data de Nasc</td>
+        </tr>
+    </thead>
+    <tbody>
+        <div id="cadastros"></div>
+    </tbody>
+</table>
+
+<script src="./js/app/models/Cadastro.js"></script>
+<script src="./js/app/controllers/CadastroController.js"></script>
+<script>
+
+    let cadastro = new CadastroController();
+</script>
