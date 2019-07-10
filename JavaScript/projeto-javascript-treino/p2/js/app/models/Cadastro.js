@@ -22,4 +22,8 @@ class Cadastro {
         this._idade = idade;
         this._dataNasc = dataNasc;
     }
+
+    dados() {
+        return cadastro = {nome: this.nome(), idade: this.idade(), dataNasc: this.dataNasc()}
+    }
 }
