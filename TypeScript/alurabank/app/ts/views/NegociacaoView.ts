@@ -1,4 +1,4 @@
-class NegociacaoView extends View {
+class NegociacaoView extends Views.View<Negociacoes> {
 
     template(model: Negociacoes): string {
 
@@ -30,9 +30,5 @@ class NegociacaoView extends View {
             </tfoot>
         </table>
         `
-    }
-
-    update(model: Negociacoes) {
-        this.elemento.innerHTML = this.template(model);
     }
 }
