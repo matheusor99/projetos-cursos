@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso HTML5 Avançado</title>
+        
+        <script src="cake.js"></script>     
+    </head>
+    
+    <body>
+    </body>    
+    
+    <script>
+        function desenhar() {
+            // criando um canvas sem o html coloquei dentro do body do documento e ele vai ter 600 de largura e 400 de altura
+            let canvas = new Canvas(document.body, 600, 400);
+            // criando um novo circulo o 100 que eu coloquei é o raio do circulo e depois outras determinações
+            let meuCirculo = new Circle(100,{
+                id: 'meuCirculo',
+                x: canvas.width/2,
+                y: canvas.height/2,
+                stroke: 'red',
+                strokeWidth:10,
+                endAngle: Math.PI*2
+            });
+
+            // animação do circulo
+            meuCirculo.addFrameListener(function(t,dt) {
+                this.scale = Math.sin(t/500);
+            });
+
+            // inserindo o meuCirculo dentro do canvas
+            canvas.append(meuCirculo);
+        }
+        window.onload = desenhar();
+    </script>        
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso HTML5 Avançado</title>    
+    </head>
+    
+    <body>
+        <canvas id="minhaTela" height="400" width="500" style="background-color: white">            
+        </canvas>
+        <script>
+            function desenhar() {
+                let canvas = document.getElementById("minhaTela");
+                // com esse getContext eu posso saber se o elemento existe e esta ativo na minha pagina
+                if(canvas.getContext){
+                    // defini que o conteudo do canvas vai ser em 2d
+                    let retangulo = canvas.getContext("2d");
+                    // cor do conteudo canvas
+                    retangulo.fillStyle = "blue";
+                    // dando as medidas de posição x, posição y, largura e altura
+                    retangulo.fillRect(50,50,400,500);
+                }
+                console.log(canvas.getContext);
+            }
+            // window se refere a pagina entao quando coloco window.onload estou dizendo que quando esta pagina carregar ele vai fazer a function q eu coloquei depois do sinal de igual
+            window.onload = desenhar();
+        </script>
+	</body>
+</html>

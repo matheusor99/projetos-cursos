@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso HTML5 Avançado</title>
+        
+        <style>
+			#minhaTela {
+				background:url(imagens/background_grafico.png) no-repeat;
+			}
+		</style>
+    </head>
+    
+    <body>
+	
+		<canvas id="minhaTela" width="490" height="370">
+		</canvas>
+		
+		<script>
+			function desenhar() {
+				var canvas=document.querySelector("#minhaTela");
+				if ( canvas.getContext ) {
+					let linha = canvas.getContext("2d");
+					linha.lineWidth = 5;
+					linha.strokeStyle = "blue";
+					// cordenadas x e y para aonde a linha começa
+					linha.moveTo(100,200);
+					// pra onde a linha vai x e y
+					linha.lineTo(270,100);
+					linha.lineTo(310,140);
+					linha.lineTo(330,120);
+					// finalizar a linha
+					linha.stroke();
+
+				}
+			}
+			
+			window.onload = desenhar;
+		</script>
+    
+	</body>
+</html>
