@@ -50,10 +50,23 @@
 				
 				var geoloc = nav.geolocation;
 				if ( geoloc != null ) {
-					geoloc.getCurrentPosition(retornarPosicao, retornarFalha);	
+					// existe um terceiro parametro que é para configurações opicionais entre elas a de aumentar a precisão da localização
+					geoloc.getCurrentPosition(retornarPosicao, retornarFalha, configuracoesExtras);	
 				}
 			}
 			
+			function configuracoesExtras() {
+				// determinar se tera uma alta precissão
+				enableHighAccuracy:true,
+				/* da para estabelecer qual o tempo que a aplicação vai puxar informação antes de dar erro de timeout se der este erro este esta com
+				5000 milisegundos ou seja 5 segundos*/
+				timeout: 5000,
+				/* determinar de quanto em quanto tempo a aplicação vai buscar sua localização por milisegundos por exemplo se eu colocar 0
+				ele vai buscar minha localização a todo momento se eu colocar 1000 ele vai buscar de 1 segundo a 1 segundo*/
+				maximumAge: 0
+
+			}
+
 			function retornarPosicao( posicao ) {
 				var mapa = document.getElementById("mapa");
 				var latitude = posicao.coords.latitude;
@@ -86,9 +99,7 @@
 				
 				
 				document.getElementById("status").innerHTML = mensagem;			
-			}
-			
-	
+			}	
         </script>
         
 	</head>
