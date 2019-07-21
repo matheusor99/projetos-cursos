@@ -37,6 +37,30 @@
         
 			function pegarPosicao() {
 				document.getElementById("status").innerHTML = "aguarde..."; 
+
+				if(nav == null) {
+					// se nav for igual a null nav vai virar a janela do meu navegador ou seja a pagina do meu navegador
+					nav = window.navigator;
+				}
+				
+				// pegando a geolocalização do navegador que é o nav la em cima
+				var geoloc = nav.geolocation
+
+				if(geoloc != null) {
+					// se geoloc for diferente de null ou seja eu permiti que geoloc pegasse a localização do nav ele vai fazer o metodo getCurrentPosition
+					// que pega a minha posição atual e retorna a fução sucesso se funcionou ou a função falha se deu errado
+					geoloc.getCurrentPosition(retornaSucesso, retornaFalha);
+				}
+
+				function retornaSucesso() {
+					var mensagem = "Sucesso! Foi possivel identificar sua posição";
+					document.getElementById("status").innerHTML = mensagem; 
+				}
+
+				function retornaFalha() {
+					var mensagem = "Falha! Não foi possivel identificar sua posição";
+					document.getElementById("status").innerHTML = mensagem; 
+				}
 			}
 	
         </script>

@@ -50,10 +50,15 @@
 				
 				var geoloc = nav.geolocation;
 				if ( geoloc != null ) {
-					geoloc.getCurrentPosition(retornarPosicao, retornarFalha);	
+					// existe um terceiro parametro que é para configurações opicionais entre elas a de aumentar a precisão da localização
+					geoloc.getCurrentPosition(retornarPosicao, retornarFalha, configuracoesExtras);	
 				}
 			}
 			
+			function configuracoesExtras() {
+					
+			}
+
 			function retornarPosicao( posicao ) {
 				var mapa = document.getElementById("mapa");
 				var latitude = posicao.coords.latitude;
@@ -86,9 +91,7 @@
 				
 				
 				document.getElementById("status").innerHTML = mensagem;			
-			}
-			
-	
+			}	
         </script>
         
 	</head>

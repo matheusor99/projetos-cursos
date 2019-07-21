@@ -46,12 +46,16 @@
                 if ( geoloc != null ) {
                     geoloc.getCurrentPosition( retornarPosicao, retornarFalha );
                 }
-                
-                function retornarPosicao() {
-                    var mensagem = "Sucesso! Foi possível identificar sua posição"; 
-                    document.getElementById("status").innerHTML = mensagem;
+				
+				// essa função de retornar posição implicitamente recebe um parametro de posição que nos da a latitude e a longitude
+                function retornarPosicao( posicao ) {
+					// pegando os dados de latidude da posicao
+					var latitude = posicao.coords.latitude;
+					// pegando os dados de longitude da posicao;
+					var longitude = posicao.coords.longitude;
+                    document.getElementById("status").innerHTML = `Latitude: ${latitude}, Longitude: ${longitude}`;
                 }
-                
+				
                 function retornarFalha() {
                     var mensagem = "Falha! Não foi possível identificar sua posição";
                     document.getElementById("status").innerHTML = mensagem;

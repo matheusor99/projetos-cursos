@@ -51,10 +51,35 @@
                     var latitude    =  posicao.coords.latitude;
                     var longitude   =  posicao.coords.longitude;
                     document.getElementById("status").innerHTML = "Latitude: " + latitude + " Longitude: " + longitude;
-                }
-                
-                function retornarFalha() {
-                    var mensagem = "Falha! Não foi possível identificar sua posição";
+				}
+				
+				// essa função de retornar falha implicitamente recebe um parametro de erro que nos da os status de erro caso de algum
+                function retornarFalha( erro ) {
+					var mensagem = "";
+					
+					// parametro é o tipo do erro o status do erro pois sao 4 tipos de erros posiveis por isso optei por usar switch case
+					switch( erro.code ) {
+						// nao foi posivel detectar a informação do usuario
+						case erro.PERMISSION_DENIED:
+							mensagem = "Acesso a localização estão indisponiveis.";
+						break;
+						
+						// posição indisponivel
+						case erro.POSITION_UNAVAILABLE:
+							mensagem = "Sua localização está indisponivel"
+						break;
+
+						// quando a aplicação busca informações por um determinado tempo e não recebe informação nenhuma
+						case erro.TIMEOUT:
+							mensagem = "Sua localização não pode ser detectada neste momento ou não foi expecificada";
+						break;
+
+						// por ultimo como não foi nenhum dos casos acima não é necessario criar outro case pode ser utilizado o default para o caso seja
+						// um erro que não foi posivel detectar
+						default:
+							mensagem = "Sua localização não pode ser especificada.";
+						break
+					}
                     document.getElementById("status").innerHTML = mensagem;
                 }
 			}
@@ -63,9 +88,9 @@
         
 	</head>
     <body>
-        <div id="status"></div>
+		<div id="status" class="status"></div>
         
-        <input type="button" onclick="pegarPosicao()" value="Pegar Geolocalização"  /> 
+		<input type="button" onclick="pegarPosicao()" value="Pegar Geolocalização"  />
     </body>
 
 </html>
