@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício de Video</title>
+	    <style>
+            body {
+                background-color:#D4D4D4;
+            }
+
+            #video {
+                width:483px;
+                height:272px;
+                margin:100px auto 0;
+                box-shadow:0 0 8px #666;			
+            }
+
+            footer {
+                font-family:Arial, Helvetica, sans-serif;
+                font-size:12px;
+                color:#666;
+                width:483px;
+                margin:30px auto;
+                background-color:#bababa;	
+                padding:20px 0;
+                text-align:center;
+            }
+        </style>
+        <!-- para o video rodar com legenda ainda era nescessari um script -->
+        <script src="includes/videosub.js"></script>
+	</head>
+
+    <body>
+    	<section id="video">
+            <!-- com a tag poster eu pude inserir uma imagem como capa do video antes dele ser iniciado -->
+            <video controls  poster="sintel.jpg" width="483" height="272">
+                <!-- com a tag source eu posso tirar o src da tag video e coloca-la nessa tag desta forma eu posso usar o atributo type
+                e especificar qual a estensão do video -->
+                <source src="../video/sintel.mp4" type="video/mp4">
+                <!-- para inserir uma legenda é utilizada a tag track com ela temos os atributos src para buscar o arquivo,
+                o srclang que é para dizer qual a lingua dessa legenda, o kind para dizer que é uma legenda que o arquivo é do tipo legenda
+                e o label para informar qual é a lingua da legenda -->
+                <track src="sintel_pt.srt"
+                 srclang="pt-BR"
+                 kind="subtitles"
+                 label="Português">
+            </video>
+    	</section>
+        
+        <footer>
+        	Video criado por Sintel.org - Creative Commons Atributtes 3.0
+        </footer>
+        
+    </body>
+</html>
