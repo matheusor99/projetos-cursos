@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="byte_bank_encapsulado/src"/>
+	<classpathentry excluding="byte_bank_herdado_conta/" kind="src" path="byte_bank_herdado_conta/src"/>
+	<classpathentry kind="src" path="byte_bank_herdado_conta/src/byte_bank_herdado_conta"/>
+	<classpathentry kind="src" path="byte_bank_herdado/src"/>
+	<classpathentry kind="src" path="exProduto/src"/>
+	<classpathentry kind="src" path="TreinoHerançaEInterface/src"/>
+	<classpathentry kind="output" path="TreinoHerançaEInterface/bin"/>
+</classpath>
