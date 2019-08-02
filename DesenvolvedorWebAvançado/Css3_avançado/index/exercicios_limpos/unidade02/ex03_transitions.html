@@ -43,6 +43,13 @@
             section.thumb {
                 display:inline-block;
                 cursor:pointer;
+                /* com o transition-property peguei a propriedade transform e configurei para a duração para esse transform e de 1 segundo ate ele se realizar   */
+                transition-property: transform;
+                /* aqui eu configurei a duração para a propriedade transform */
+                transition-duration: 1s;
+                /* com está configuração abaixo não precisso detalhar tanto o transition como foi feito com as duas propriedades acima,
+                aonde esta abaixo faz o mesmo que as de cima juntas  com o ease-out aonde ele vai desacelerando no final da transição da transformação*/
+                transition: all 1s ease-out;
             }
 
             section.thumb:hover {
