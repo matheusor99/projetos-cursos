@@ -43,10 +43,13 @@
             section.thumb {
                 display:inline-block;
                 cursor:pointer;
+                /* esse transform-origin me permite dizer por onde vai começar o trensform que está na class abaixo
+                neste caso estou dizendo que o scale vai começar de baico pela esquerda */
+                transform-origin: bottom left;
             }
 
             section.thumb:hover {
-                transform:			scale(1.3);
+                transform:scale(1.3);
             }
         </style>
     </head>
