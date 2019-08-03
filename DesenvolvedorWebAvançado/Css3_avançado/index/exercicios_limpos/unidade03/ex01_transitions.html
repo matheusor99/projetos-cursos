@@ -46,7 +46,15 @@
                 width:256px;
                 height:256px;
                 z-index:1;
+                /* com o clip eu impesso que apareça uma parte do elemento que eu não quero que apareça na tela
+                como se fosse um recorte  ou seja com isso texto da div filha nao vai aparecer
+                a não ser que apareça no espaço que eu determinei*/
                 clip:rect(0 256px 256px 0);
+
+                /* hj a propriedade clip esta ficando desatualizada e sendo substituida pela clip-path que faz o mesmo so que no momento é recomendado usar os dois pois existem
+                alguns navegadores que ainda não suportam o clip-path e desta forma ele não funciona ai tem que usar a propriedade clip, mas em algum tempo clip não ira 
+                funcionar tendo que usar o clip-path  */
+                clip-path: inset(0); 
             }
 
             .janela_texto {
@@ -55,17 +63,28 @@
                 left: 0;
                 width: 246px;
                 height: 256px;
-                background-color: #000;
+                /* usando o rgba para o background-color eu não precisso usar a propriedade opacity pois com ele ja posso determinar a opacidade do elemento e melhor aqui ele vai mudar
+                mudar a opacidade so do background oque deixará os outros elementos normais que no caso sao os textos aonde eles nao sofreram com a opacidade */
+                background-color: rgba(0, 0, 0, 0.7);
+                /* com z-index + o numero eu digo que este elemento vai ficar sobre aquele que tem um numero menor seguindo uma estrutura de empilhamento */
                 z-index: 2;
                 padding: 5px;
-                opacity: 0.7;
                 cursor: pointer;
+
+                /* apliquei esse transition para a transição  ter 0.5 segundos  */
+                transition: all 0.5s ease-out;
+            }
+
+            .janela_texto:hover{
+                /* aqui coloquei que a transição seja para que quando passar o mouse em cima do elemento dessa classe ele suba */
+                top: 100px;
             }
 
             h3 {
                 font-family: 'PT Mono', sans-serif;
                 font-size:18px;
                 color:#008B9C;	
+                /* com esse  letter-spacing eu consigo cumprimir as coisas como fiz com as letras no h3 */
                 letter-spacing:-0.1em;
                 margin:0;
             }
