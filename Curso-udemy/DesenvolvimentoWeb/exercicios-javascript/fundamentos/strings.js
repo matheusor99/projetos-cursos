@@ -12,3 +12,11 @@ console.log(escola.substring(0, 3)); // com esses parametros estou dizendo pra t
 // a indice antes de 3
 
 console.log('Escola '.concat(escola)); // com a função concat eu estou concatenando os valores
+
+console.log(escola.replace(3, 'e')); //com o comando replace eu indico a possição do elemento na string e depois oque eu
+//quero repassar em cima daquele elemento na posição selecionada aqui ira imprimir no console "Coder" ao inves de "Cod3r"
+
+console.log('ana,matheus,milena'.split(",")); //com o metodo split eu crio um array com os elementos na string onde 
+//eu estou falando para separar a string por vigulas nela e oque foi separado vira um elemento do array
+
+console.log('3' + 2); // neste caso não sera feito o calculo, pois o simbolo de mais serve para concatenar string e numeros
