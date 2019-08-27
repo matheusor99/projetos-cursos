@@ -20,3 +20,7 @@ console.log('ana,matheus,milena'.split(",")); //com o metodo split eu crio um ar
 //eu estou falando para separar a string por vigulas nela e oque foi separado vira um elemento do array
 
 console.log('3' + 2); // neste caso não sera feito o calculo, pois o simbolo de mais serve para concatenar string e numeros
+
+let num = 8
+let n = num.toString()
+console.log(typeof n)

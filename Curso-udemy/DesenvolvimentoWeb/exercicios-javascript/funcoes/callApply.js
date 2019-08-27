@@ -15,7 +15,7 @@ global.desc = 0.10;
 console.log(getPreco());
 console.log(produto.getPreco())
 
-// com o metodo call eu passo para a funcao getPreco como aprametro algo que possua
+// com o metodo call eu passo para a funcao getPreco como parametro algo que possua
 // os parametros que a funcao estava pedindo como desc e preco e deposi eu passo os paramentros
 // definidos la na propria função
 console.log(getPreco.call(produto, 10, 'R$'));
