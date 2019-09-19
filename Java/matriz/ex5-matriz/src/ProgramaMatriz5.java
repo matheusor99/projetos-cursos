@@ -21,6 +21,14 @@ public class ProgramaMatriz5 {
 		}
 	}
 	
+	public static void exibeMatriz(int[][] matriz) {
+		for(int linha = 0; linha < matriz3.length; linha++) {
+			for(int coluna =0; coluna < matriz[linha].length; coluna++) {
+				
+			}
+		}
+	}
+	
 	public static void main(String[] args) {
 		int[][] matriz = new int[1][4];
 		int[][] matriz2 = new int[1][4];
@@ -29,5 +37,14 @@ public class ProgramaMatriz5 {
 		inserirValorMatriz(matriz);
 		inserirValorMatriz(matriz2);
 		
+		for(int linha = 0; linha < matriz3.length; linha++) {
+			for(int coluna = 0; coluna < matriz3[linha].length; coluna++) {
+				if(coluna == 0) {
+					matriz3[linha][coluna] = matriz[0][coluna];
+				} else {
+					matriz3[linha][coluna] = matriz2[0][coluna];
+				}
+			}
+		}
 	}
 }

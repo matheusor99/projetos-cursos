@@ -27,16 +27,19 @@ public class ProgramaMatriz3 {
 		
 		inserirValorMatriz(matriz);		
 		
-		for(int linha = 0; linha < matrizSoma.length; linha ++) {
-			for(int coluna = 0; coluna < matrizSoma[linha].length; coluna++) {
-				int valorColuna = 0;
-					for (int coluna2 = 0; coluna2 < matriz[linha].length; coluna2++) {
-						valorColuna += matriz[linha][coluna2];
-					}
-				matrizSoma[0][coluna] = valorColuna; 
-			}
-		}
+		int valor = 0;
+		int contador = 0;
 		
+		for (int coluna = 0; coluna < matriz.length; coluna++) {
+			for (int linha = 0; linha < matriz[coluna].length; linha++) {
+				valor += matriz[linha][coluna];
+				for (int coluna2 = 0; coluna2 < matriz[coluna].length; coluna2++) {
+					matrizSoma[linha][coluna] = 0;
+				}
+			}
+
+			valor = 0;
+		}
 		exibeMatriz(matrizSoma);
 	}
 }
