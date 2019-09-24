@@ -14,6 +14,5 @@ body{
   align-items: center;
   text-align: center;
   color: #ffff;
-  color: black;
-  background: linear-gradient(to rigth,rgb(83,105,118), rgb(41,46,73))
+  background: linear-gradient(rgb(83,105,118), rgb(41,46,73))
 }
