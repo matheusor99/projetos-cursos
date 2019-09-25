@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const porta = 3000;
+const porta = 3003;
 
 app.get('/produtos', (req, res, next) => {
     res.send({ nome: 'Notebook', preco: 123.45 }) // send automaticamente converte pa Json
