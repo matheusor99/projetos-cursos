@@ -22,9 +22,9 @@ public class ProgramaMatriz5 {
 	}
 	
 	public static void exibeMatriz(int[][] matriz) {
-		for(int linha = 0; linha < matriz3.length; linha++) {
+		for(int linha = 0; linha < matriz.length; linha++) {
 			for(int coluna =0; coluna < matriz[linha].length; coluna++) {
-				
+				System.out.println(matriz[linha][coluna]);
 			}
 		}
 	}
@@ -37,14 +37,25 @@ public class ProgramaMatriz5 {
 		inserirValorMatriz(matriz);
 		inserirValorMatriz(matriz2);
 		
-		for(int linha = 0; linha < matriz3.length; linha++) {
-			for(int coluna = 0; coluna < matriz3[linha].length; coluna++) {
+//		for(int linha = 0; linha < matriz3.length; linha++) {
+//			for(int coluna = 0; coluna < matriz3[linha].length; coluna++) {
+//				if(coluna == 0) {
+//					matriz3[linha][coluna] = matriz[0][coluna];
+//				} else {
+//					matriz3[linha][coluna] = matriz2[0][coluna];
+//				}
+//			}
+//		}
+		
+		for (int linha = 0; linha < matriz.length; linha++) {
+			for (int coluna = 0; coluna < matriz3[linha].length; coluna++) {
 				if(coluna == 0) {
 					matriz3[linha][coluna] = matriz[0][coluna];
-				} else {
-					matriz3[linha][coluna] = matriz2[0][coluna];
 				}
 			}
 		}
+		
+		for (int coluna = 0; coluna < matriz3; coluna++)
+		exibeMatriz(matriz3);
 	}
 }
